@@ -1,0 +1,74 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001   #配置服务器启动端口
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybaits配置文件路径所在
+  type-aliases-package: com.tedu.cn.entity  #mybaits别名所在的包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml    #mybatis映射文件所在的位置
+spring:
+  profiles: dev
+  application:
+    name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb01              # 数据库名称
+    username: root
+    password: admin
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+  instance:
+    instance-id: dept_provider:8001
+    prefer-ip-address: true
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---
+server:
+  port: 8002   #配置服务器启动端口
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybaits配置文件路径所在
+  type-aliases-package: com.tedu.cn.entity  #mybaits别名所在的包
+  mapper-locations:
+    - classpath:mybatis/mapper/**/*.xml    #mybatis映射文件所在的位置
+spring:
+  profiles: test
+  application:
+    name: microservicecloud-dept
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
+    driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
+    url: jdbc:mysql://localhost:3306/clouddb02             # 数据库名称
+    username: root
+    password: admin
+    dbcp2:
+      min-idle: 5                                           # 数据库连接池的最小维持连接数
+      initial-size: 5                                       # 初始化连接数
+      max-total: 5                                          # 最大连接数
+      max-wait-millis: 200                                  # 等待连接获取的最大超时时间
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+  instance:
+    instance-id: dept_provider:8002
+    prefer-ip-address: true
+info:
+  app.name: atguigu-microservicecloud
+  company.name: www.atguigu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
