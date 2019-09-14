@@ -18,7 +18,6 @@ eureka:
     service-url:
       defaultZone: http://7001.com:7001/eureka/
 ---
-
 server:
   port: 7001
 spring:
