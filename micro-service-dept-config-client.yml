@@ -39,7 +39,7 @@ info:
   build.version: $project.version$
 ---
 server:
-  port: 8002   #配置服务器启动端口
+  port: 8001   #配置服务器启动端口
 mybatis:
   config-location: classpath:mybatis/mybatis.cfg.xml #mybaits配置文件路径所在
   type-aliases-package: com.tedu.cn.entity  #mybaits别名所在的包
