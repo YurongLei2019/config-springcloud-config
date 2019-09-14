@@ -8,7 +8,7 @@ server:
 spring:
   profiles: dev
   application:
-    name: micro-service-eureka-config-client
+    name: micro-service-config-eureka-client
 eureka:
   instance:
     hostname: 7001.com
@@ -23,7 +23,7 @@ server:
 spring:
   profiles: test
   application:
-    name: micro-service-eureka-config-client
+    name: micro-service-config-eureka-client
 eureka:
   instance:
     hostname: 7001.com
