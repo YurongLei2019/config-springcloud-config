@@ -1,0 +1,34 @@
+spring:
+  profiles:
+    active:
+    - dev
+  application:
+    name: micro-service-cloud-eureka-config-client
+---
+server: 
+  port: 8201
+spring:
+  profiles: dev
+  application:
+    name: micro-service-cloud-eureka-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+  instance:
+    instance-id: ureka_config_server_dev
+    prefer-ip-address: true      
+---
+server: 
+  port: 8202
+spring:
+  profiles: test
+  application:
+    name: micro-service-cloud-eureka-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+  instance:
+    instance-id: ureka_config_server_test
+    prefer-ip-address: true       
