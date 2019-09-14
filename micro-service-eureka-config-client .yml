@@ -6,7 +6,7 @@ spring:
     name: micro-service-cloud-eureka-config-client
 ---
 server: 
-  port: 8201
+  port: 7001
 spring:
   profiles: dev
   application:
@@ -20,7 +20,7 @@ eureka:
     prefer-ip-address: true      
 ---
 server: 
-  port: 8202
+  port: 7002
 spring:
   profiles: test
   application:
@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://7001.com:7001/eureka
+      defaultZone: http://7001.com:7002/eureka
   instance:
     instance-id: ureka_config_server_test
     prefer-ip-address: true       
