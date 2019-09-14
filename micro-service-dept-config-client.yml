@@ -28,7 +28,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+      defaultZone: http://7001.com:7001/eureka/
   instance:
     instance-id: dept_provider:8001
     prefer-ip-address: true
@@ -63,7 +63,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://7001.com:7001/eureka/,http://7002.com:7002/eureka/,http://7003.com:7003/eureka/
+      defaultZone: http://7001.com:7001/eureka/
   instance:
     instance-id: dept_provider:8002
     prefer-ip-address: true
